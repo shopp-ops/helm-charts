@@ -1,0 +1,17 @@
+cloudnative-pg:
+  # CNPG operator defaults are fine for local dev
+  {}
+
+ingress-nginx:
+  controller:
+    # Required for ingress to work on kind — binds directly to the node's host ports
+    hostPort:
+      enabled: true
+    service:
+      type: NodePort
+    nodeSelector:
+      ingress-ready: "true"
+    tolerations:
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Equal"
+        effect: "NoSchedule"

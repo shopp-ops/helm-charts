@@ -1,0 +1,9 @@
+ShopHub database deployed.
+
+Wait for the PostgreSQL cluster to be ready:
+
+  kubectl get cluster {{ .Values.database.clusterName }} -n {{ .Release.Namespace }}
+
+Then port-forward the database so the app can reach it:
+
+  kubectl port-forward svc/{{ .Values.database.clusterName }}-rw 5432:5432 -n {{ .Release.Namespace }}

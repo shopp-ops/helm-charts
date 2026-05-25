@@ -1,0 +1,9 @@
+dependencies:
+- name: cloudnative-pg
+  repository: https://cloudnative-pg.github.io/charts
+  version: 0.22.0
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
+  version: 4.10.1
+digest: sha256:874aad22b92adc3894c78e8e8d50b517eb5949ee3c0e57689f920f76f9495590
+generated: "2026-05-22T19:33:14.537858492+02:00"

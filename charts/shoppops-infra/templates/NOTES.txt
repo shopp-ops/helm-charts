@@ -1,0 +1,10 @@
+Cluster infrastructure installed.
+
+Wait for all pods to be ready before proceeding:
+
+  kubectl get pods -A
+
+Wait for CNPG CRDs to be registered:
+
+  kubectl wait --for=condition=established \
+    crd/clusters.postgresql.cnpg.io --timeout=60s

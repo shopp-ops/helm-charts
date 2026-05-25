@@ -1,0 +1,10 @@
+database:
+  # Name of the CNPG Cluster resource and the PostgreSQL database/user
+  clusterName: shophub-db
+  name: shophub
+  username: shophub
+  # Override in values.local.yaml — never commit passwords
+  password: ""
+  storage: 1Gi
+  # Single instance is enough for local dev
+  instances: 1
