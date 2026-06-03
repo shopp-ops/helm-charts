@@ -6,6 +6,9 @@ description: >
   and Shop operator CRDs.
 type: application
 version: 0.1.1
+maintainers:
+  - name: shopp-ops
+    email: danilo.cvijetic10@gmail.com
 dependencies:
   - name: cloudnative-pg
     version: "0.28.2"

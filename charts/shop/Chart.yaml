@@ -4,3 +4,6 @@ description: >
   Shop e-commerce storefront.
 type: application
 version: 0.1.0
+maintainers:
+  - name: shopp-ops
+    email: danilo.cvijetic10@gmail.com
