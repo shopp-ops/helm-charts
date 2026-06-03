@@ -39,8 +39,8 @@ jobs:
               continue
             fi
 
-            if [ -f "${chart_dir}Chart.lock" ]; then
-              helm dependency build "$chart_dir"
+            if [ -f "${chart_dir}Chart.yaml" ] && grep -q '^dependencies:' "${chart_dir}Chart.yaml"; then
+              helm dependency update "$chart_dir"
             fi
 
             helm package "$chart_dir" --destination /tmp/charts
