@@ -1,0 +1,6 @@
+# Local dev overrides — never commit these
+charts/*/values.local.yaml
+
+# Downloaded Helm dependencies
+charts/*/charts/
+*.tgz

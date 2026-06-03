@@ -1,0 +1,15 @@
+apiVersion: v2
+name: shoppops-infra
+description: >
+  Cluster infrastructure for local development.
+  Installs the CNPG PostgreSQL operator, NGINX ingress controller,
+  and Shop operator CRDs.
+type: application
+version: 0.1.0
+dependencies:
+  - name: cloudnative-pg
+    version: "1.29.0"
+    repository: "https://cloudnative-pg.github.io/charts"
+  - name: ingress-nginx
+    version: "4.15.0"
+    repository: "https://kubernetes.github.io/ingress-nginx"

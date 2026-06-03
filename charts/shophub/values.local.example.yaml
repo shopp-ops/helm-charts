@@ -1,0 +1,5 @@
+# Copy this file to values.local.yaml and fill in your local credentials.
+# values.local.yaml is gitignored and must never be committed.
+
+database:
+  password: changeme

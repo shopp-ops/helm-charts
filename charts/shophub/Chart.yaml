@@ -1,0 +1,6 @@
+apiVersion: v2
+name: shophub
+description: >
+  ShopHub application
+type: application
+version: 0.1.0

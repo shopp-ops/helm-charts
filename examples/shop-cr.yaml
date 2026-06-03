@@ -1,0 +1,10 @@
+apiVersion: apps.shop-operator.io/v1alpha1
+kind: Shop
+metadata:
+  name: my-shop
+  namespace: default
+spec:
+  name: my-shop
+  availability: standard
+  walletAddress: "0x0000000000000000000000000000000000000000"
+  database: standard
