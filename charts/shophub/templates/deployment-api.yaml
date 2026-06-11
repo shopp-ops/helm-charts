@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: {{ .Release.Name }}-api
+    namespace: {{ .Release.Namespace }}
+spec:
+    replicas: {{ .Values.api.replicaCount }}
+    selector:
+        matchLabels:
+            app: {{ .Release.Name }}-api
+    template:
+        metadata:
+            labels:
+                app: {{ .Release.Name }}-api
+        spec:
+            containers:
+              - name: api
+                image: "{{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}"
+                imagePullPolicy: {{ .Values.api.image.pullPolicy }}
+                ports:
+                  - containerPort: 3000
+                env:
+                  - name: DATABASE_URL
+                    valueFrom:
+                      secretKeyRef:
+                        name: {{ .Release.Name }}-app
+                        key: database-url
+                  - name: JWT_SECRET
+                    valueFrom:
+                      secretKeyRef:
+                        name: {{ .Release.Name }}-app
+                        key: jwt-secret
+                  - name: CORS_ORIGIN
+                    value: {{ .Values.web.baseUrl | quote }}
+                  - name: NODE_ENV
+                    value: {{ .Values.web.nodeEnv | quote }}
