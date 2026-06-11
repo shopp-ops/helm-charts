@@ -1,5 +1,24 @@
 # Copy this file to values.local.yaml and fill in your local credentials.
 # values.local.yaml is gitignored and must never be committed.
+api:
+  jwtSecret: "change-me"
+  baseUrl: "http://shophub.local/api"
+  nodeEnv: "development"
+  image: # override to use local dev image imported via kind load docker-image
+    repository: shophub-api
+    tag: dev
+    pullPolicy: Never
+
+web:
+  baseUrl: "http://shophub.local"
+  nodeEnv: "development"
+  image: # override to use local dev image imported via kind load docker-image
+    repository: shophub-web
+    tag: dev
+    pullPolicy: Never
 
 database:
-  password: changeme
+  password: "change-me"
+
+ingress:
+  host: shophub.local
