@@ -1,9 +1,30 @@
-ShopHub database deployed.
+ShopHub deployed.
 
-Wait for the PostgreSQL cluster to be ready:
+Wait for all pods to be ready:
+
+  kubectl get pods -n {{ .Release.Namespace }} -w
+
+Check the ingress:
+
+  kubectl get ingress -n {{ .Release.Namespace }}
+
+{{ if .Values.ingress.enabled -}}
+App is available at: http://{{ .Values.ingress.host }}
+API:                 http://{{ .Values.ingress.host }}/api
+
+Make sure {{ .Values.ingress.host }} resolves locally:
+  echo "127.0.0.1 {{ .Values.ingress.host }}" | sudo tee -a /etc/hosts
+{{ end -}}
+
+Check PostgreSQL cluster status:
 
   kubectl get cluster {{ .Values.database.clusterName }} -n {{ .Release.Namespace }}
 
-Then port-forward the database so the app can reach it:
+To port-forward the database directly:
 
   kubectl port-forward svc/{{ .Values.database.clusterName }}-rw 5432:5432 -n {{ .Release.Namespace }}
+
+Roll out new images after kind load:
+
+  kubectl rollout restart deployment/{{ .Release.Name }}-api -n {{ .Release.Namespace }}
+  kubectl rollout restart deployment/{{ .Release.Name }}-web -n {{ .Release.Namespace }}
