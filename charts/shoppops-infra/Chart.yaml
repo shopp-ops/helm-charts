@@ -5,7 +5,7 @@ description: >
   Installs the CNPG PostgreSQL operator, NGINX ingress controller,
   and Shop operator CRDs.
 type: application
-version: 0.1.1
+version: 0.1.2
 maintainers:
   - name: shopp-ops
     email: danilo.cvijetic10@gmail.com
