@@ -3,7 +3,7 @@ name: Lint
 on:
   pull_request:
     paths:
-      - 'charts/**'
+      - "charts/**"
 
 jobs:
   lint:
@@ -23,6 +23,7 @@ jobs:
         run: |
           helm repo add cnpg https://cloudnative-pg.github.io/charts
           helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+          helm repo add mongodb https://mongodb.github.io/helm-charts
           helm repo update
 
       - name: Run chart-testing (lint)

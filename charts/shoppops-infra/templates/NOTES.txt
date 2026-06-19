@@ -8,3 +8,8 @@ Wait for CNPG CRDs to be registered:
 
   kubectl wait --for=condition=established \
     crd/clusters.postgresql.cnpg.io --timeout=60s
+
+Wait for MongoDB Community CRDs to be registered:
+
+  kubectl wait --for=condition=established \
+    crd/mongodbcommunity.mongodbcommunity.mongodb.com --timeout=60s

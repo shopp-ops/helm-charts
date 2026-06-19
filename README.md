@@ -22,6 +22,7 @@ helm-charts/
 Bootstraps the local development cluster. Installs:
 
 - **CNPG operator** — manages PostgreSQL clusters via the `Cluster` CRD
+- **MongoDB Community Operator** — manages `MongoDBCommunity` custom resources
 - **NGINX ingress controller** — configured for kind (hostPort, NodePort)
 - **Shop operator CRDs** — `Shop`, `DiscordChannel`, `Wallet` (mock — no controller in local dev, CRDs only so ShopHub can create resources without errors)
 

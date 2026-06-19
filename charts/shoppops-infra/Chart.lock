@@ -5,5 +5,8 @@ dependencies:
 - name: ingress-nginx
   repository: https://kubernetes.github.io/ingress-nginx
   version: 4.15.0
-digest: sha256:3386c726759803f471700b7d36cddff0d340ceb29ffc319f02b4953c4f3cc208
-generated: "2026-06-03T20:50:57.694128014+02:00"
+- name: community-operator
+  repository: https://mongodb.github.io/helm-charts
+  version: 0.13.0
+digest: sha256:5814646ce5939d8eaea37723ae57b0a0fea5ef2a6a2364998f2f3ee8e8ac7b61
+generated: "2026-06-19T20:16:58.51292548+02:00"
