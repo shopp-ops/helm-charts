@@ -2,6 +2,10 @@ cloudnative-pg:
   # CNPG operator defaults are fine for local dev
   {}
 
+community-operator:
+  operator:
+    watchNamespace: "*"
+
 ingress-nginx:
   controller:
     # Required for ingress to work on kind — binds directly to the node's host ports
