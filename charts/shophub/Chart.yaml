@@ -3,7 +3,7 @@ name: shophub
 description: >
   ShopHub application
 type: application
-version: 0.2.0
+version: 0.3.0
 maintainers:
   - name: shopp-ops
     email: danilo.cvijetic10@gmail.com

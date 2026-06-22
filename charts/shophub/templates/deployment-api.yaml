@@ -13,6 +13,7 @@ spec:
             labels:
                 app: {{ .Release.Name }}-api
         spec:
+            serviceAccountName: {{ include "shophub.serviceAccountName" . }}
             containers:
               - name: api
                 image: "{{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}"
