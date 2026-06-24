@@ -1,9 +1,5 @@
 apiVersion: v2
 name: shop
-description: >
-  Shop e-commerce storefront.
+description: Deploys a Shop CR instance
 type: application
-version: 0.1.1
-maintainers:
-  - name: shopp-ops
-    email: danilo.cvijetic10@gmail.com
+version: 0.1.0
