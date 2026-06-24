@@ -19,3 +19,20 @@ ingress-nginx:
       - key: "node-role.kubernetes.io/control-plane"
         operator: "Equal"
         effect: "NoSchedule"
+
+# -- Configuration to dynamically generate registry secrets for GHCR
+ghcrSecret:
+  enabled: false
+  name: ghcr-secret
+  registry: ghcr.io
+  username: ""
+  password: ""
+
+# -- Values for the shop-operator sub-chart
+shop-operator:
+  imagePullSecrets:
+    - name: ghcr-secret
+  controllerManager:
+    manager:
+      imagePullSecrets:
+        - name: ghcr-secret
