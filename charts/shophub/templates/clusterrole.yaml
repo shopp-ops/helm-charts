@@ -1,0 +1,22 @@
+{{- if .Values.rbac.create }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "shophub.shopManagerRoleName" . }}
+rules:
+  # Shop custom resources — the operator reconciles these into real workloads.
+  - apiGroups: ["shopops.shopops.dc.com"]
+    resources: ["shops"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["shopops.shopops.dc.com"]
+    resources: ["shops/status"]
+    verbs: ["get"]
+  # One namespace per shop — created on shop create, removed on delete.
+  - apiGroups: [""]
+    resources: ["namespaces"]
+    verbs: ["get", "create", "delete"]
+  # Per-shop credentials live as secrets inside the shop namespace.
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["get", "create", "update", "delete"]
+{{- end }}

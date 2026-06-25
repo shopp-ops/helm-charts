@@ -31,3 +31,15 @@ database:
   storage: 1Gi
   # Single instance is enough for local dev
   instances: 1
+
+# ServiceAccount the API pod runs as — its token is the in-cluster
+# identity used by @kubernetes/client-node to manage Shop resources.
+serviceAccount:
+  create: true
+  # Defaults to <release>-api when empty
+  name: ""
+
+# Cluster-scoped RBAC granting the API permission to manage Shop CRs,
+# their per-shop namespaces, and the secrets inside them.
+rbac:
+  create: true
