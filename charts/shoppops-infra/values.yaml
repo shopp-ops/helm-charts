@@ -32,7 +32,6 @@ ghcrSecret:
 shop-operator:
   imagePullSecrets:
     - name: ghcr-secret
-  controllerManager:
-    manager:
-      imagePullSecrets:
-        - name: ghcr-secret
+  manager:
+    imagePullSecrets:
+      - name: ghcr-secret
