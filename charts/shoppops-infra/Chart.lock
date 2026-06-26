@@ -10,6 +10,6 @@ dependencies:
   version: 0.13.0
 - name: shop-operator
   repository: oci://ghcr.io/shopp-ops/charts
-  version: 0.0.0-cd2264e
-digest: sha256:7422988ba762565837f7714cef4a34ee8948b46fb1f5cfb1b6db11e8fd57b5f1
-generated: "2026-06-24T13:54:57.961022384+02:00"
+  version: 0.1.0
+digest: sha256:30947f4dcb26a6bf4daf2e9a7561e9f1d75341e48faa2f0aacdec5b62fae9b3f
+generated: "2026-06-26T10:39:05.510771027+02:00"
