@@ -20,5 +20,5 @@ dependencies:
     version: "0.13.0"
     repository: "https://mongodb.github.io/helm-charts"
   - name: shop-operator
-    version: "0.0.0-cd2264e"
+    version: "0.1.0"
     repository: "oci://ghcr.io/shopp-ops/charts"
