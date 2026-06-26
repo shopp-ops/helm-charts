@@ -1,10 +1,8 @@
 name: Lint
-
 on:
   pull_request:
     paths:
       - "charts/**"
-
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -18,6 +16,12 @@ jobs:
 
       - name: Set up chart-testing
         uses: helm/chart-testing-action@v2
+
+      - name: Login to GHCR (for OCI chart dependencies)
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io \
+            --username ${{ github.actor }} \
+            --password-stdin
 
       - name: Add Helm repositories
         run: |
