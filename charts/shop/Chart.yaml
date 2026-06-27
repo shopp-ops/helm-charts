@@ -3,3 +3,6 @@ name: shop
 description: Deploys a Shop CR instance
 type: application
 version: 0.2.0
+maintainers:
+  - name: shopp-ops
+    email: danilo.cvijetic10@gmail.com
