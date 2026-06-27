@@ -1,0 +1,22 @@
+apiVersion: shopops.com/v1
+kind: Shop
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  name: {{ .Values.name | quote }}
+  availability: {{ .Values.availability }}
+  database:
+    type: {{ .Values.database.type }}
+  apiImage: {{ .Values.apiImage | quote }}
+  webImage: {{ .Values.webImage | quote }}
+  adminEmail: {{ .Values.adminEmail | quote }}
+  {{- if .Values.host }}
+  host: {{ .Values.host | quote }}
+  {{- end }}
+  {{- if .Values.walletAddress }}
+  walletAddress: {{ .Values.walletAddress | quote }}
+  {{- end }}
+  {{- if .Values.discordChannelRef }}
+  discordChannelRef: {{ .Values.discordChannelRef | quote }}
+  {{- end }}

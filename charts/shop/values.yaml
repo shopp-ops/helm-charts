@@ -1,16 +1,13 @@
-replicaCount: 1
+name: "My Shop"
+availability: standard
 
-image:
-  repository: ghcr.io/shopp-ops/shop
-  tag: latest
-  pullPolicy: IfNotPresent
+database:
+  type: standard
 
-service:
-  type: ClusterIP
-  port: 3000
+apiImage: "ghcr.io/shopp-ops/shophub-api:latest"
+webImage: "ghcr.io/shopp-ops/shophub-web:latest"
 
-ingress:
-  enabled: false
-  className: nginx
-  host: ""
-  tls: []
+adminEmail: "admin@shop.local"
+host: "shop.example.com"
+walletAddress: ""
+discordChannelRef: ""

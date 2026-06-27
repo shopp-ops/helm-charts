@@ -8,5 +8,8 @@ dependencies:
 - name: community-operator
   repository: https://mongodb.github.io/helm-charts
   version: 0.13.0
-digest: sha256:5814646ce5939d8eaea37723ae57b0a0fea5ef2a6a2364998f2f3ee8e8ac7b61
-generated: "2026-06-19T20:16:58.51292548+02:00"
+- name: shop-operator
+  repository: oci://ghcr.io/shopp-ops/charts
+  version: 0.1.0
+digest: sha256:30947f4dcb26a6bf4daf2e9a7561e9f1d75341e48faa2f0aacdec5b62fae9b3f
+generated: "2026-06-26T10:39:05.510771027+02:00"
