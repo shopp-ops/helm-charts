@@ -7,6 +7,13 @@ api:
   jwtSecret: ""
   baseUrl: ""        # http://shophub.local/api — CORS_ORIGIN
   nodeEnv: "production"
+  # Images the operator stamps onto every Shop CR (SHOP_API_IMAGE / SHOP_WEB_IMAGE).
+  # Must be overridden per environment (ghcr tags in prod, dev tags + kind load locally).
+  shopApiImage: ""
+  shopWebImage: ""
+  # Suffix for per-shop ingress hosts: shophub.<name>-<id>.<suffix>.
+  # Locally, "127.0.0.1.sslip.io" makes every shop resolve to localhost with no /etc/hosts.
+  shopHostSuffix: ""
 
 web:
   replicaCount: 1
