@@ -2,6 +2,9 @@
 # values.local.yaml is gitignored and must never be committed.
 api:
   jwtSecret: "change-me"
+  shopApiImage: "change-me"
+  shopWebImage: "change-me"
+  shopHostSuffix: "change-me"
   baseUrl: "http://shophub.local/api"
   nodeEnv: "development"
   image: # override to use local dev image imported via kind load docker-image
