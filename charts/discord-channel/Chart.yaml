@@ -3,3 +3,6 @@ name: discord-channel
 description: Helm chart for provisioning a DiscordChannel CR
 type: application
 version: 0.2.0
+maintainers:
+  - name: Aleksa Perovic
+    email: faxaleksa@gmail.com
