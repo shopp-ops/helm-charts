@@ -4,5 +4,5 @@ description: Helm chart for provisioning a DiscordChannel CR
 type: application
 version: 0.2.0
 maintainers:
-  - name: Aleksa Perovic
-    email: faxaleksa@gmail.com
+  - name: shopp-ops
+    email: danilo.cvijetic10@gmail.com
