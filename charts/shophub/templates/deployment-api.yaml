@@ -35,3 +35,9 @@ spec:
                     value: {{ .Values.web.baseUrl | quote }}
                   - name: NODE_ENV
                     value: {{ .Values.web.nodeEnv | quote }}
+                  - name: SHOP_API_IMAGE
+                    value: {{ .Values.api.shopApiImage | quote }}
+                  - name: SHOP_WEB_IMAGE
+                    value: {{ .Values.api.shopWebImage | quote }}
+                  - name: SHOP_HOST_SUFFIX
+                    value: {{ .Values.api.shopHostSuffix | quote }}

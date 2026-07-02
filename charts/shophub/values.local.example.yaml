@@ -2,6 +2,12 @@
 # values.local.yaml is gitignored and must never be committed.
 api:
   jwtSecret: "change-me"
+  shopApiImage: "shop-api:dev"
+  shopWebImage: "shop-web:dev"
+  # Wildcard DNS suffix so every per-shop host (shophub.<name>-<id>.<suffix>)
+  # resolves to 127.0.0.1 with no /etc/hosts edits. sslip.io maps *.127.0.0.1
+  # to localhost automatically; ingress-nginx routes by Host header.
+  shopHostSuffix: "127.0.0.1.sslip.io"
   baseUrl: "http://shophub.local/api"
   nodeEnv: "development"
   image: # override to use local dev image imported via kind load docker-image

@@ -5,10 +5,10 @@ metadata:
   name: {{ include "shophub.shopManagerRoleName" . }}
 rules:
   # Shop custom resources — the operator reconciles these into real workloads.
-  - apiGroups: ["shopops.shopops.dc.com"]
+  - apiGroups: ["shopops.com"]
     resources: ["shops"]
     verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
-  - apiGroups: ["shopops.shopops.dc.com"]
+  - apiGroups: ["shopops.com"]
     resources: ["shops/status"]
     verbs: ["get"]
   # One namespace per shop — created on shop create, removed on delete.
