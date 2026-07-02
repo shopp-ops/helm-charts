@@ -1,0 +1,7 @@
+apiVersion: shopops.com/v1
+kind: DiscordChannel
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  webhookURL: {{ .Values.webhookURL | quote }}

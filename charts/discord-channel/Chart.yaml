@@ -1,0 +1,5 @@
+apiVersion: v2
+name: discord-channel
+description: Helm chart for provisioning a DiscordChannel CR
+type: application
+version: 0.1.0
