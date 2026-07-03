@@ -50,3 +50,19 @@ serviceAccount:
 # their per-shop namespaces, and the secrets inside them.
 rbac:
   create: true
+
+# Prometheus scraping of the API's /metrics endpoint. Off by default so the
+# chart renders on clusters without the Prometheus-Operator CRDs installed.
+metrics:
+  serviceMonitor:
+    enabled: false
+    path: /metrics
+    interval: 30s
+
+# OpenTelemetry tracing. When enabled, the API pod gets the standard OTEL_*
+# env the OpenTelemetry SDK reads. Point endpoint at the Alloy OTLP receiver.
+otel:
+  enabled: false
+  endpoint: ""                 # e.g. http://alloy.observability.svc:4318
+  protocol: "http/protobuf"    # or "grpc"
+  serviceName: "shophub-api"

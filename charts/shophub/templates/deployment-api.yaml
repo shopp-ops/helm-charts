@@ -41,3 +41,13 @@ spec:
                     value: {{ .Values.api.shopWebImage | quote }}
                   - name: SHOP_HOST_SUFFIX
                     value: {{ .Values.api.shopHostSuffix | quote }}
+                  {{- if .Values.otel.enabled }}
+                  - name: OTEL_EXPORTER_OTLP_ENDPOINT
+                    value: {{ .Values.otel.endpoint | quote }}
+                  - name: OTEL_EXPORTER_OTLP_PROTOCOL
+                    value: {{ .Values.otel.protocol | quote }}
+                  - name: OTEL_SERVICE_NAME
+                    value: {{ .Values.otel.serviceName | quote }}
+                  - name: OTEL_RESOURCE_ATTRIBUTES
+                    value: "service.name={{ .Values.otel.serviceName }},service.namespace={{ .Release.Namespace }}"
+                  {{- end }}

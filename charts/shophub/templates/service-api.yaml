@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: {{ .Release.Name }}-api
   namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}-api
 spec:
   selector:
     app: {{ .Release.Name }}-api
   ports:
-    - port: 3000
+    - name: http
+      port: 3000
       targetPort: 3000
   type: ClusterIP
