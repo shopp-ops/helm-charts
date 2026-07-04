@@ -1,0 +1,7 @@
+DiscordChannel "{{ .Release.Name }}" declared in namespace {{ .Release.Namespace }}.
+
+The shop-operator will create the Discord channel "{{ .Values.shopName }}" and
+store its webhook URL in Secret "discord-{{ .Release.Name }}".
+
+Check readiness:
+  kubectl -n {{ .Release.Namespace }} get discordchannel {{ .Release.Name }}
