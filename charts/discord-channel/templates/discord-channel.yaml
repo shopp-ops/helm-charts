@@ -1,7 +1,9 @@
 apiVersion: shopops.com/v1
 kind: DiscordChannel
 metadata:
-  name: {{ .Values.name }}
+  name: {{ .Release.Name }}
   namespace: {{ .Release.Namespace }}
 spec:
-  webhookURL: {{ .Values.webhookURL | quote }}
+  # The operator creates a Discord channel with this name, adds a webhook, and
+  # writes the webhook URL into Secret discord-{{ .Release.Name }}.
+  shopName: {{ .Values.shopName | quote }}

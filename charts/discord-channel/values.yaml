@@ -1,2 +1,4 @@
-name: "disco"
-webhookURL: ""
+# Name of the channel the operator provisions on the Discord server.
+# This chart declares the ONE shared cluster channel (per-shop channels are
+# created by the operator during Shop reconcile, not by this chart).
+shopName: "cluster-alerts"
