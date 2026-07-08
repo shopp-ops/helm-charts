@@ -4,8 +4,8 @@ availability: standard
 database:
   type: standard
 
-apiImage: "ghcr.io/shopp-ops/shophub-api:latest"
-webImage: "ghcr.io/shopp-ops/shophub-web:latest"
+apiImage: "ghcr.io/shopp-ops/shop-api:1.0.0"
+webImage: "ghcr.io/shopp-ops/shop-web:1.0.0"
 
 adminEmail: "admin@shop.local"
 host: "shop.example.com"
